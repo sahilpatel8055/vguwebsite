@@ -10,10 +10,10 @@ export default function Home() {
         <div className="flex justify-between items-center px-4 py-3 max-w-screen-xl mx-auto">
           <div className="flex items-center space-x-4">
             <Link href="/">
-              <Image src="/logos/logo.svg" alt="VGU Logo" width={56} height={56} />
+              <Image src="/logos/logo.svg" alt="VGU Logo" width={56} height={56} style={{height: "auto"}} />
             </Link>
             <Link href="/">
-              <Image src="/logos/naac.svg" alt="NAAC Logo" width={40} height={40} />
+              <Image src="/logos/naac.svg" alt="NAAC Logo" width={40} height={40} style={{height: "auto"}} />
             </Link>
           </div>
           <nav className="hidden lg:block">
