@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,12 +9,12 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-gray-200">
         <div className="flex justify-between items-center px-4 py-3 max-w-screen-xl mx-auto">
           <div className="flex items-center space-x-4">
-            <a href="/">
+            <Link href="/">
               <Image src="/logos/logo.svg" alt="VGU Logo" width={56} height={56} />
-            </a>
-            <a href="/">
+            </Link>
+            <Link href="/">
               <Image src="/logos/naac.svg" alt="NAAC Logo" width={40} height={40} />
-            </a>
+            </Link>
           </div>
           <nav className="hidden lg:block">
             <ul className="flex items-center space-x-8 font-bold text-lg text-gray-700">
@@ -24,7 +25,6 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          {/* Mobile Menu Btn */}
           <button className="lg:hidden focus:outline-none" aria-label="Toggle menu">
             <svg
               stroke="currentColor"
@@ -56,7 +56,7 @@ export default function Home() {
       {/* ====== HERO + FORM ====== */}
       <section className="mt-10 px-4 sm:px-8 font-poppins font-medium">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8">
-          {/* Hero Carousel (placeholder, replace with react-slick if needed) */}
+          {/* Hero Image */}
           <div className="w-full md:w-1/2">
             <Image
               src="/hero/slide2m.webp"
@@ -71,34 +71,92 @@ export default function Home() {
           <div className="w-full md:w-1/2 max-w-md mx-auto md:mx-0">
             <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-300">
               <h2 className="text-2xl font-semibold mb-4 text-[#7F1813] text-center">
-                Great Decision! Let's Connect With You Soon
+                Great Decision! Let&apos;s Connect With You Soon
               </h2>
               <form className="space-y-3">
+                {/* Name + Email */}
                 <div className="flex gap-3">
                   <div className="w-1/2">
                     <label className="block text-sm mb-1">Full Name</label>
-                    <input
-                      placeholder="Enter your name"
-                      className="w-full p-2 border border-gray-300 rounded-3xl text-sm outline-none"
-                      type="text"
-                      required
-                    />
+                    <input className="w-full p-2 border border-gray-300 rounded-3xl text-sm" type="text" required />
                   </div>
                   <div className="w-1/2">
                     <label className="block text-sm mb-1">Email</label>
-                    <input
-                      placeholder="Enter email"
-                      className="w-full p-2 border border-gray-300 rounded-3xl text-sm outline-none"
-                      type="email"
-                      required
-                    />
+                    <input className="w-full p-2 border border-gray-300 rounded-3xl text-sm" type="email" required />
                   </div>
                 </div>
-                {/* More fields... (Phone, Course, State, City, etc.) */}
-                <button
-                  type="submit"
-                  className="border w-full rounded-3xl bg-black text-white py-2 text-sm font-medium"
-                >
+                {/* Phone + Course */}
+                <div className="flex gap-3">
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1">Mobile</label>
+                    <input className="w-full p-2 border border-gray-300 rounded-3xl text-sm" type="tel" maxLength="10" required />
+                  </div>
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1">Course</label>
+                    <select className="w-full p-2 border border-gray-300 rounded-3xl text-sm" required>
+                      <option value="">Select a course</option>
+                      <option>BA Economics</option>
+                      <option>BA History</option>
+                      <option>BA Public Policy & Development</option>
+                      <option>BA Political Science</option>
+                      <option>BA English</option>
+                      <option>BBA General</option>
+                      <option>BBA in Digital Marketing</option>
+                      <option>BCA General</option>
+                      <option>BCA in AI</option>
+                      <option>BCA in Data Science</option>
+                      <option>M.A. English</option>
+                      <option>MBA General</option>
+                      <option>MBA in HR Management</option>
+                      <option>MCA</option>
+                      <option>M.Sc. Mathematics</option>
+                    </select>
+                  </div>
+                </div>
+                {/* State + City */}
+                <div className="flex gap-3">
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1">State</label>
+                    <select className="w-full p-2 border border-gray-300 rounded-3xl text-sm" required>
+                      <option value="">Select state</option>
+                      <option>Andhra Pradesh</option>
+                      <option>Delhi</option>
+                      <option>Gujarat</option>
+                      <option>Maharashtra</option>
+                      <option>Rajasthan</option>
+                      <option>Tamil Nadu</option>
+                      <option>Uttar Pradesh</option>
+                      <option>West Bengal</option>
+                    </select>
+                  </div>
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1">City</label>
+                    <input className="w-full p-2 border border-gray-300 rounded-3xl text-sm" type="text" required />
+                  </div>
+                </div>
+                {/* Are you + Gender */}
+                <div className="flex gap-3">
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1">Are You?</label>
+                    <select className="w-full p-2 border border-gray-300 rounded-3xl text-sm">
+                      <option value="">-- Select --</option>
+                      <option>Student</option>
+                      <option>Working Professional</option>
+                      <option>Parents</option>
+                    </select>
+                  </div>
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1">Gender</label>
+                    <select className="w-full p-2 border border-gray-300 rounded-3xl text-sm">
+                      <option value="">-- Select --</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                {/* Submit */}
+                <button type="submit" className="border w-full rounded-3xl bg-black text-white py-2 text-sm font-medium">
                   Submit
                 </button>
               </form>
@@ -107,53 +165,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== WHO WE ARE ====== */}
-      <section className="px-6 py-10 md:py-16 lg:py-20 bg-white" id="who-we-are">
-        <div className="grid md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/assets/whoweare_dxdwyev8.webp"
-              alt="VGU Campus"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          <div>
-            <h2 className="custom-heading-text">
-              <span className="custom-text-gradient">Who</span> We Are
-            </h2>
-            <p className="mt-4 leading-relaxed text-justify">
-              Online VGU is a <strong>digital initiative of NAAC A+ accredited Vivekananda Global University</strong>,
-              Jaipur offering <strong>UGC-Entitled</strong> online degree programs empowering thousands of learners.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ====== PROGRAMS (Example) ====== */}
+      {/* ====== PROGRAMS ====== */}
       <section className="relative px-4 md:px-12 pb-14 overflow-hidden bg-[#fff7f7]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-3xl font-bold my-8">Explore Online VGU Programs</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl shadow-md p-4">
-              <Image src="/programme/mbaimage.webp" alt="MBA" width={400} height={200} className="rounded-lg" />
-              <p className="mt-2 font-bold text-lg">Online MBA</p>
-              <p className="text-gray-700">Duration: 24 months</p>
-              <p className="text-gray-700">Fee: INR 1,50,000</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-4">
-              <Image src="/programme/bcaimage.webp" alt="BCA" width={400} height={200} className="rounded-lg" />
-              <p className="mt-2 font-bold text-lg">Online BCA</p>
-              <p className="text-gray-700">Duration: 36 months</p>
-              <p className="text-gray-700">Fee: INR 1,32,000</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-md p-4">
-              <Image src="/programme/baimage.webp" alt="BA" width={400} height={200} className="rounded-lg" />
-              <p className="mt-2 font-bold text-lg">Online BA</p>
-              <p className="text-gray-700">Duration: 36 months</p>
-              <p className="text-gray-700">Fee: INR 72,000</p>
-            </div>
+            {[
+              { img: "/programme/mbaimage.webp", title: "Online MBA", duration: "24 months", fee: "INR 1,50,000" },
+              { img: "/programme/bcaimage.webp", title: "Online BCA", duration: "36 months", fee: "INR 1,32,000" },
+              { img: "/programme/bbaimage.webp", title: "Online BBA", duration: "36 months", fee: "INR 1,32,000" },
+              { img: "/programme/baimage.webp", title: "Online BA", duration: "36 months", fee: "INR 72,000" },
+              { img: "/programme/mcaimage.webp", title: "Online MCA", duration: "24 months", fee: "INR 1,50,000" },
+              { img: "/programme/mscimage.webp", title: "Online M.Sc", duration: "24 months", fee: "INR 72,000" },
+              { img: "/programme/maimage.webp", title: "Online MA", duration: "24 months", fee: "INR 72,000" },
+              { img: "/programme/majmcimage.webp", title: "Online MAJMC", duration: "24 months", fee: "INR 72,000" },
+              { img: "/programme/mbaifimage.webp", title: "Online MBA-IF", duration: "24 months", fee: "INR 2,40,000" },
+            ].map((p, i) => (
+              <div key={i} className="bg-white rounded-xl shadow-md p-4">
+                <Image src={p.img} alt={p.title} width={400} height={200} className="rounded-lg" />
+                <p className="mt-2 font-bold text-lg">{p.title}</p>
+                <p className="text-gray-700">Duration: {p.duration}</p>
+                <p className="text-gray-700">Fee: {p.fee}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
