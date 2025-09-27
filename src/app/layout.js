@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <title>Online VGU – Dynamic Online Degree</title>
         <link rel="icon" type="image/ico" href="/favicon-vgu.ico" />
 
-        {/* Load CSS files from /public (served as /assets/... and /css/...) */}
+        {/* Load CSS files from /public */}
         <link rel="stylesheet" href="/assets/index_b9e_zdrh.css" />
         <link rel="stylesheet" href="/css/inline_styles.css" />
       </head>
@@ -38,3 +38,10 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+          `}
+        </Script>
+      </body>
+    </html>
+  );
+}
