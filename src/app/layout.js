@@ -1,7 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "../public/assets/index_b9e_zdrh.css";
-import "../public/css/inline_styles.css";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -22,11 +20,15 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Online VGU – Dynamic Online Degree</title>
         <link rel="icon" type="image/ico" href="/favicon-vgu.ico" />
+
+        {/* Load CSS files from /public (served as /assets/... and /css/...) */}
+        <link rel="stylesheet" href="/assets/index_b9e_zdrh.css" />
+        <link rel="stylesheet" href="/css/inline_styles.css" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
 
-        {/* Google Analytics */}
+        {/* Google Analytics Example */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
           strategy="afterInteractive"
@@ -36,10 +38,3 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
-          `}
-        </Script>
-      </body>
-    </html>
-  );
-}
