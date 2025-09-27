@@ -1,4 +1,3 @@
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
@@ -21,11 +20,11 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Online VGU – Dynamic Online Degree</title>
         <link rel="icon" type="image/ico" href="/favicon-vgu.ico" />
-        {/* Google tag (gtag.js) */}
-        <script async src="/www.googletagmanager.com/gtag/js"></script>
-        {/* Meta Pixel Code and other analytics/scripts can be added here */}
+        {/* External styles */}
         <link rel="stylesheet" href="/assets/index_b9e_zdrh.css" />
         <link rel="stylesheet" href="/css/inline_styles.css" />
+        {/* Google Tag Manager / Meta Pixel placeholders */}
+        <script async src="/www.googletagmanager.com/gtag/js"></script>
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
