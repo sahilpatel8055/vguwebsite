@@ -1,55 +1,54 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       {/* ====== HEADER ====== */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-gray-200">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-gray-200">
         <div className="flex justify-between items-center px-4 py-3 max-w-screen-xl mx-auto">
           <div className="flex items-center space-x-4">
-            <Link href="/">
-              <Image src="/logos/logo.svg" alt="VGU Logo" width={56} height={56} style={{height: "auto"}} />
-            </Link>
-            <Link href="/">
-              <Image src="/logos/naac.svg" alt="NAAC Logo" width={40} height={40} style={{height: "auto"}} />
-            </Link>
+            <a href="/" data-discover="true">
+              <img alt="logo" className="h-14 cursor-pointer" src="/logos/logo.svg" />
+            </a>
+            <a href="/" data-discover="true">
+              <img alt="NAAC logo" className="h-10" src="/logos/naac.svg" />
+            </a>
           </div>
           <nav className="hidden lg:block">
             <ul className="flex items-center space-x-8 font-bold text-lg text-gray-700">
               <li>
-                <button className="custom-btn-bg text-white px-6 py-2 rounded-lg transition duration-200 font-poppins">
+                <button className="custom-btn-bg text-white px-6 py-2 rounded-lg transition duration-200 font-poppins cursor-pointer">
                   Apply Now
                 </button>
               </li>
             </ul>
           </nav>
           <button className="lg:hidden focus:outline-none" aria-label="Toggle menu">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              viewBox="0 0 512 512"
-              height="30"
-              width="30"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
               <path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"></path>
             </svg>
           </button>
         </div>
-      </header>
+      </div>
 
       {/* ====== ANNOUNCEMENT ====== */}
       <div className="flex w-full mt-20">
         <div className="bg-[#7F1813] text-white flex items-center px-4 py-1 space-x-2 md:w-[220px]">
-          <span className="font-bold">ANNOUNCEMENT</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-volume2 lucide-volume-2 text-yellow-400" aria-hidden="true">
+            <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path>
+            <path d="M16 9a5 5 0 0 1 0 6"></path>
+            <path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path>
+          </svg>
+          <span className="font-bold font-poppins">ANNOUNCEMENT</span>
         </div>
         <div className="bg-[#111] text-white flex-1 overflow-hidden font-poppins">
-          <marquee className="py-1">
-            Admission Open for July 2025 Session &nbsp; | &nbsp; Limited Seats Available – Apply Now! &nbsp; | &nbsp;
-            Enroll in BBA, MBA, BCA, or MCA and get free LinkedIn Learning access!
-          </marquee>
+          <div className="rfm-marquee-container py-1" style={{"--pause-on-hover": "paused", "--pause-on-click": "paused", "--width": "100%", "--transform": "none"}}>
+            <div className="rfm-marquee" style={{"--play": "running", "--direction": "normal"}}>
+              Admission Open for July 2025 Session &nbsp; | &nbsp; Limited Seats Available – Apply Now! &nbsp; | &nbsp;
+              Enroll in BBA, MBA, BCA, or MCA and get free LinkedIn Learning access!
+            </div>
+          </div>
         </div>
       </div>
 

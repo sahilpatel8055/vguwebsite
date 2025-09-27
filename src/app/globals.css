@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Import the existing CSS files that are referenced in the HTML */
+/* Note: These are imported in the layout.js via link tags to match the HTML structure */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +26,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles to match the HTML */
+.custom-btn-bg {
+  background-color: #7F1813;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
 }
