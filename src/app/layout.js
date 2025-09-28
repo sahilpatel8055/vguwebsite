@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import Image from "next/image";
 
 export default function RootLayout({ children }) {
   return (
@@ -16,8 +17,6 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         
-        {/* Load CSS files from /public - matching the HTML structure */}
-        <link rel="stylesheet" href="/css/inline_styles.css" />
       </head>
       <body>
         <div id="root">
@@ -40,7 +39,7 @@ export default function RootLayout({ children }) {
         
         {/* Meta Pixel Code */}
         <noscript>
-          <img height="1" width="1" style={{display: 'none'}} src="/www.facebook.com/tr" alt="" />
+          <Image height="1" width="1" style={{display: 'none'}} src="/www.facebook.com/tr" alt="" />
         </noscript>
         <iframe height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
         
