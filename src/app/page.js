@@ -4,6 +4,31 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    mobile: '',
+    course: '',
+    state: '',
+    city: '',
+    areYou: '',
+    gender: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Add your form submission logic here
+  };
+
   return (
     <>
       {/* ====== HEADER ====== */}
@@ -11,10 +36,10 @@ export default function Home() {
         <div className="flex justify-between items-center px-4 py-3 max-w-screen-xl mx-auto">
           <div className="flex items-center space-x-4">
             <Link href="/" data-discover="true">
-              <img alt="VGU logo" className="h-14 cursor-pointer" src="/logos/logo.svg" />
+                <Image alt="VGU logo" className="h-14 cursor-pointer" src="/logos/logo.svg" width={56} height={56} />
             </Link>
             <Link href="/" data-discover="true">
-              <img alt="NAAC logo" className="h-10" src="/logos/naac.svg" />
+              <Image alt="NAAC logo" className="h-10" src="/logos/naac.svg" width={40} height={40} />
             </Link>
           </div>
           <nav className="hidden lg:block">
@@ -245,7 +270,7 @@ export default function Home() {
               Online VGU is a <strong>digital initiative of NAAC A+ accredited</strong> Vivekananda Global University, Jaipur offering <strong>UGC-Entitled</strong> online degree programs empowering over thousands of learners through <strong>globally trusted VGU education</strong> with greater <strong>flexibility, affordability and accessibility.</strong>
             </p>
             <p className="mt-2 leading-relaxed text-justify">
-              Our degrees are globally recognized and hold the same value as regular on-campus programs. Whether you're upskilling, reskilling, or starting fresh, our <strong>learner-centric approach</strong> ensures you gain the knowledge, credentials, and confidence to succeed — anytime, anywhere.
+              Our degrees are globally recognized and hold the same value as regular on-campus programs. Whether you&apos;re upskilling, reskilling, or starting fresh, our <strong>learner-centric approach</strong> ensures you gain the knowledge, credentials, and confidence to succeed — anytime, anywhere.
             </p>
           </div>
         </div>
@@ -260,7 +285,7 @@ export default function Home() {
           <div className="flex justify-center">
             <hr className="w-1/2 h-[3px] bg-[#7F1813] border-0 rounded mt-2"></hr>
           </div>
-          <p className="custom-subheading-text">Here's why VGU Online is a trusted name in quality education</p>
+          <p className="custom-subheading-text">Here&apos;s why VGU Online is a trusted name in quality education</p>
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="slick-slider slick-initialized" dir="ltr">
@@ -453,7 +478,7 @@ export default function Home() {
           </div>
           <div className="lg:w-1/2 bg-white text-black p-6 rounded-md shadow-md">
             <p className="text-base leading-relaxed font-poppins">
-              In line with the University Grants Commission's (UGC) emphasis on expanding online education to reach a broader demographic, Online VGU is democratizing education by making quality learning accessible to every household.
+              In line with the University Grants Commission&apos;s (UGC) emphasis on expanding online education to reach a broader demographic, Online VGU is democratizing education by making quality learning accessible to every household.
             </p>
           </div>
         </div>
@@ -690,7 +715,7 @@ export default function Home() {
             <h2 className="custom-heading-text mb-6">
               <span className="custom-text-gradient">Admission</span> Process
             </h2>
-            You've Come Scrolling This Far—why Stop Now? <br />
+            You&apos;ve Come Scrolling This Far—why Stop Now? <br />
             Share Your Details And Apply Now!
           </div>
           <div>
@@ -825,14 +850,14 @@ export default function Home() {
               </div>
               <div className="space-y-4 mb-6"></div>
               <div className="flex flex-wrap gap-3 mb-8 py-3"></div>
-              <p className="text-sm text-gray-500 font-poppins font-semibold mt-6">Can't find what you are looking for?</p>
+              <p className="text-sm text-gray-500 font-poppins font-semibold mt-6">Can&apos;t find what you are looking for?</p>
               <div className="flex items-center gap-4 mt-2">
                 <a href="tel:+919220315527" title="Call Admission Queries" className="bg-[#7F1813] p-3 rounded-full cursor-pointer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone text-white w-7 h-7" aria-hidden="true">
                     <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
                   </svg>
                 </a>
-                <p className="text-xl font-semibold font-poppins">Let's connect over a quick call</p>
+                <p className="text-xl font-semibold font-poppins">Let&apos;s connect over a quick call</p>
               </div>
             </div>
             <div className="hidden lg:block absolute bottom right-0 w-[70%] max-w-[800px] left-100">
