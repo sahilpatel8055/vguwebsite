@@ -1,6 +1,4 @@
-/* Import the compiled CSS that matches onlinevgu.in exactly */
-@import url('/css/index-B9e_zdRH.css');
-@import url('/css/inline_styles.css');
+/* CSS files are now loaded via <link> tags in layout.js for better Next.js compatibility */
 
 /* Additional custom styles to match the reference site */
 body {

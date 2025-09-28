@@ -13,6 +13,10 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Online VGU offers dynamic online degree programs including MBA, BBA, BCA, MCA, BA, MA, and M.Sc. courses with flexible learning options." />
         <meta name="keywords" content="online degree, online MBA, online BBA, online BCA, online MCA, online education, VGU" />
         
+        {/* CSS Stylesheets - Load vendor CSS first */}
+        <link rel="stylesheet" href="/css/index-B9e_zdRH.css" />
+        <link rel="stylesheet" href="/css/inline_styles.css" />
+        
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
