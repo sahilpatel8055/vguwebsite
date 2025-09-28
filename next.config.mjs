@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuration for Replit environment (user sees proxy in iframe)
-  experimental: {
-    // Explicitly set Turbopack root to this workspace to avoid mis-detection
-    turbopack: {
-      root: process.cwd(),
-    },
-  },
   // Allow cross-origin requests for Replit proxy
   allowedDevOrigins: ['*'],
+  // Allow access from all domains for Replit environment
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ];
+  },
   // Disable strict mode to prevent hydration issues
   reactStrictMode: false,
 };
